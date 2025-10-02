@@ -21,5 +21,10 @@ jobs:
           path: ~/.cache/demo
           key: cache-7680cda
 
+      - name: Add file into cache
+        run: |
+          mkdir -p ~/.cache/demo
+          echo "Hello cache!" > ~/.cache/demo/hello.txt
+
       - name: Check cache result
         run: echo "Cache hit? -> ${{ steps.cache-step.outputs.cache-hit }}"
